@@ -1,0 +1,174 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="33D22B55-2C2A-8642-DBBD-02520EC0A4FB" schemaObject="7A147C5C-2F1C-183A-FA44-957DC6C71838" name="댓글v1">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>댓글</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="댓글_글번호" id="2A813802-D97A-1C44-B969-52E93548DCD7">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>댓글v1</sourceObjSchema>
+<sourceObjName>댓글_글번호</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="797D4212-B4BA-D2CB-0DD8-84F8C9E2AC6B" referredColumn="FA06BE7A-75B5-0BF4-D65C-C13F1FF83F2E"/>
+</associations>
+</Column>
+<Column name="댓글_내용" id="0DCA27BA-BA84-FACA-E78A-54ADB5966ACC">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>댓글v1</sourceObjSchema>
+<sourceObjName>댓글_내용</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="댓글_순서" id="06E977AC-5CE7-FBDE-A4B6-ED155C4AD2DE">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>댓글v1</sourceObjSchema>
+<sourceObjName>댓글_순서</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>30</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,30,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="댓글_답글" id="0CAC8A70-61B8-0163-06A1-87F6D2127DF8">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>댓글v1</sourceObjSchema>
+<sourceObjName>댓글_답글</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="댓글_비밀글" id="7087C640-F0AA-A22C-A132-FDD3680D2A91">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>댓글v1</sourceObjSchema>
+<sourceObjName>댓글_비밀글</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="댓글_작성자" id="FF11BF50-2381-D9D4-99BF-20C78176E993">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>댓글v1</sourceObjSchema>
+<sourceObjName>댓글_작성자</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="댓글_공개여부" id="9D0ED955-1B3A-186A-9779-5AEAE962DA22">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>댓글v1</sourceObjSchema>
+<sourceObjName>댓글_공개여부</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="댓글_작성자_공개여부" id="13D42868-93DF-6C87-FCBC-247228963FDE">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>댓글v1</sourceObjSchema>
+<sourceObjName>댓글_작성자_공개여부</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CAD7CEE9-61E2-CF43-299F-00B5C1425D14" name="댓글_PKv1">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>댓글_PKv1</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A813802-D97A-1C44-B969-52E93548DCD7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3FD1AFB8-3F0B-EA01-EF9B-5E7A27727325" schemaObject="7A147C5C-2F1C-183A-FA44-957DC6C71838" name="댓글_PK">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>댓글_PK</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A813802-D97A-1C44-B969-52E93548DCD7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C6FE86D3-B218-407C-E338-A6397B550FD1" name="댓글_글번호_PF">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:25:27 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A813802-D97A-1C44-B969-52E93548DCD7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

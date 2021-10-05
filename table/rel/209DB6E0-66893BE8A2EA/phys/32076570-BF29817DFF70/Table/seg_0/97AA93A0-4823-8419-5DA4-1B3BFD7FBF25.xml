@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="고객센터" directorySegmentName="seg_0" id="97AA93A0-4823-8419-5DA4-1B3BFD7FBF25">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:16 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<schemaObject>7A147C5C-2F1C-183A-FA44-957DC6C71838</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>44FCA9DE-5604-AE12-9C22-4A102D4E1F23</segment>
+<tableSpace>2EFD2353-9871-DFEA-B4E9-83DC0F101BC5</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="작성자" id="A1F854F2-8658-93D3-330F-7B826524BBEC">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:16 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="고객센터_PK" id="74908B3F-DBC8-E73E-8567-348B04F55ED2">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:16 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<schemaObject>7A147C5C-2F1C-183A-FA44-957DC6C71838</schemaObject>
+<segment>B8AEE09B-D7C5-9E76-9149-E928E1712CF1</segment>
+<tableSpace>2EFD2353-9871-DFEA-B4E9-83DC0F101BC5</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="고객센터_PK" id="0349FA2B-DCF8-BDEF-F3A7-00293C49772D">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:16 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<segment>B8AEE09B-D7C5-9E76-9149-E928E1712CF1</segment>
+<tableSpace>2EFD2353-9871-DFEA-B4E9-83DC0F101BC5</tableSpace>
+<existingIndex>74908B3F-DBC8-E73E-8567-348B04F55ED2</existingIndex>
+<indexSegment>B8AEE09B-D7C5-9E76-9149-E928E1712CF1</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

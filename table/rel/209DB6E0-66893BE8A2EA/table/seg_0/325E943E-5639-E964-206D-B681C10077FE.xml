@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="325E943E-5639-E964-206D-B681C10077FE" schemaObject="7A147C5C-2F1C-183A-FA44-957DC6C71838" name="공지사항">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>공지사항</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="작성자" id="B8FD7B49-F43A-B6B3-DD50-F8911FA57F03">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>공지사항</sourceObjSchema>
+<sourceObjName>작성자</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="글제목" id="B01450E8-2370-87B0-FD97-5B2F18A6EC1F">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>공지사항</sourceObjSchema>
+<sourceObjName>글제목</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="글내용" id="C9DF0A2F-F215-D9A4-9E06-CD95EB84CEBE">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>공지사항</sourceObjSchema>
+<sourceObjName>글내용</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4C67BE49-BEB8-8C09-A3C5-33FBD995CA4F" name="공지사항_PK">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>공지사항_PK</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B8FD7B49-F43A-B6B3-DD50-F8911FA57F03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CD882096-C76C-9287-555F-DC60BF8BF22C" schemaObject="7A147C5C-2F1C-183A-FA44-957DC6C71838" name="공지사항_PK">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>공지사항_PK</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B8FD7B49-F43A-B6B3-DD50-F8911FA57F03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

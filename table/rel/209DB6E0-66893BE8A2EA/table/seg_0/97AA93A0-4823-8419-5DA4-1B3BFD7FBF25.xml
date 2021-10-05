@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="97AA93A0-4823-8419-5DA4-1B3BFD7FBF25" schemaObject="7A147C5C-2F1C-183A-FA44-957DC6C71838" name="고객센터">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>고객센터</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:16 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="작성자" id="A1F854F2-8658-93D3-330F-7B826524BBEC">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>고객센터</sourceObjSchema>
+<sourceObjName>작성자</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:16 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0349FA2B-DCF8-BDEF-F3A7-00293C49772D" name="고객센터_PK">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>고객센터_PK</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:16 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A1F854F2-8658-93D3-330F-7B826524BBEC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="74908B3F-DBC8-E73E-8567-348B04F55ED2" schemaObject="7A147C5C-2F1C-183A-FA44-957DC6C71838" name="고객센터_PK">
+<sourceConnName>slivertree</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>고객센터_PK</sourceObjName>
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:16 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A1F854F2-8658-93D3-330F-7B826524BBEC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

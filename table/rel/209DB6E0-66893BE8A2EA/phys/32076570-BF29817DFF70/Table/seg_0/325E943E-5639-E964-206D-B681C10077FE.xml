@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="공지사항" directorySegmentName="seg_0" id="325E943E-5639-E964-206D-B681C10077FE">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<schemaObject>7A147C5C-2F1C-183A-FA44-957DC6C71838</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>44FCA9DE-5604-AE12-9C22-4A102D4E1F23</segment>
+<tableSpace>2EFD2353-9871-DFEA-B4E9-83DC0F101BC5</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="글제목" id="B01450E8-2370-87B0-FD97-5B2F18A6EC1F">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="작성자" id="B8FD7B49-F43A-B6B3-DD50-F8911FA57F03">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="글내용" id="C9DF0A2F-F215-D9A4-9E06-CD95EB84CEBE">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="공지사항_PK" id="CD882096-C76C-9287-555F-DC60BF8BF22C">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<schemaObject>7A147C5C-2F1C-183A-FA44-957DC6C71838</schemaObject>
+<segment>B8AEE09B-D7C5-9E76-9149-E928E1712CF1</segment>
+<tableSpace>2EFD2353-9871-DFEA-B4E9-83DC0F101BC5</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="공지사항_PK" id="4C67BE49-BEB8-8C09-A3C5-33FBD995CA4F">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 15:24:11 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<segment>B8AEE09B-D7C5-9E76-9149-E928E1712CF1</segment>
+<tableSpace>2EFD2353-9871-DFEA-B4E9-83DC0F101BC5</tableSpace>
+<existingIndex>CD882096-C76C-9287-555F-DC60BF8BF22C</existingIndex>
+<indexSegment>B8AEE09B-D7C5-9E76-9149-E928E1712CF1</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
