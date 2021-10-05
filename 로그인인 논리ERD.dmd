@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="로그인인 논리ERD" id="64B686CF-1F1D-016C-CEF5-402C8C48A94A" version="3.5">
+<createdBy>USER</createdBy>
+<createdTime>2021-10-05 11:14:21 UTC</createdTime>
+<ownerDesignName>로그인인 논리ERD</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>64B686CF-1F1D-016C-CEF5-402C8C48A94A</designId>
+</OSDM_Design>
