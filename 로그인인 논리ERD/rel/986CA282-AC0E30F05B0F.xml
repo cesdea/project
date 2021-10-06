@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="로그인" id="986CA282-8A82-FB42-627D-AC0E30F05B0F" mainViewID="D08E2296-9B72-D2D7-A6A6-9ABA0F7F9697">
-<createdBy>USER</createdBy>
-<createdTime>2021-10-05 11:14:31 UTC</createdTime>
-<ownerDesignName>로그인인 논리ERD</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
-</relationalModel>

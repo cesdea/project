@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="C27BC442-278B-0D19-9305-6DDDC022D155" mainViewID="F2FAA293-4D79-7940-A28A-1591C24D42A6">
-<createdBy>USER</createdBy>
-<createdTime>2021-10-05 11:14:21 UTC</createdTime>
-<ownerDesignName>로그인인 논리ERD</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-</LogicalDesign>
