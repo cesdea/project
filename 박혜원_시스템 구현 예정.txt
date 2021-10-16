@@ -20,6 +20,8 @@ ServiceWriteOk.jsp : 고객센터 글 작성 처리
 
 ServiceList.jsp : 고객센터 글 목록
 
+ServiceShow.jsp : 고객센터 글 내용 보기
+
 ServiceBean.java : service테이블 데이터 getter/setter
 
 ServiceDBBean.java : customer 테이블관련 쿼리 수행 메서드
