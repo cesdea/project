@@ -1,13 +1,13 @@
 @@@회원 정보 변경
 
-UpdateCustomer.jsp : 회원 정보 변경 폼
+CustomerUpdate.jsp : 회원 정보 변경 폼
 
-UpdateCustomerOk.jsp : 회원 정보 변경 처리
+CustomerUpdateOk.jsp : 회원 정보 변경 처리
 
 CustomerBean.java : customer 테이블 데이터 getter/setter
 
 CustomerDBBean.java : customer 테이블관련 쿼리 수행 메서드
-↳ getInstance(), getConnection(), getCustomer(), UpdateCustomer()
+↳ getInstance(), getConnection(), getCustomer(), updateCustomer()
 
 customer.js : 유효성 검사
 
@@ -19,8 +19,6 @@ ServiceWrite.jsp : 고객센터 글 작성 폼
 ServiceWriteOk.jsp : 고객센터 글 작성 처리
 
 ServiceList.jsp : 고객센터 글 목록
-
-ServiceWrite.jsp : 고객센터 글 보기
 
 ServiceBean.java : service테이블 데이터 getter/setter
 
