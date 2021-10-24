@@ -11,9 +11,9 @@
 </head>
 <body>
 	<%
-		String uid = (String)session.getAttribute("uid"); //세션 이름 로그인할 때 만들어질 세션 이름이랑 맞출 것
+		String id = (String)session.getAttribute("id");
 		CustomerDBBean db = CustomerDBBean.getInstance();
-		CustomerBean customer = db.getCustomer(uid);
+		CustomerBean customer = db.getCustomer(id);
 	%>
 	<table>
 		<form name="reg_frm" method="post" action="CustomerUpdateOk.jsp">

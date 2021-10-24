@@ -37,11 +37,53 @@ public class CustomerDBBean {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			String db_mem_pwd;
+			String db_cus_pwd;
 			
 			if (rs.next()) {
-				db_mem_pwd = rs.getString("cus_pwd");
-				if (db_mem_pwd.equals(pwd)) {
+				db_cus_pwd = rs.getString("cus_pwd");
+				if (db_cus_pwd.equals(pwd)) {
+					re = 1;
+				} else {
+					re = 0;
+				}
+			} else {
+				re=-1;
+			}
+			
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+		return re;
+	}
+	
+	public int manCheck(String id, String pwd) throws Exception{
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		
+		String sql = "SELECT man_pwd FROM manager where man_id =?";
+		int re=-1;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			String db_man_pwd;
+			
+			if (rs.next()) {
+				db_man_pwd = rs.getString("man_pwd");
+				if (db_man_pwd.equals(pwd)) {
 					re = 1;
 				} else {
 					re = 0;
@@ -104,6 +146,43 @@ public class CustomerDBBean {
 		}
 		
 		return customer;
+	}
+	
+	public CustomerBean getManager(String id) throws Exception {
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		
+		String sql = "SELECT * FROM manager where man_id =?";
+
+		CustomerBean manager=null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				manager = new CustomerBean();
+				manager.setMan_id(rs.getString("man_id"));
+				manager.setMan_pwd(rs.getString("man_pwd"));
+				manager.setMan_name(rs.getString("man_name"));
+			} 
+
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();				
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+		return manager;
 	}
 	
 	public int updateCustomer(CustomerBean customer) throws Exception {

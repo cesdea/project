@@ -4,12 +4,13 @@
 <jsp:useBean id="customer" class="portfolio.customer.CustomerBean"></jsp:useBean>
 <jsp:setProperty property="*" name="customer" />
 	<%
-		String uid = (String) session.getAttribute("uid"); //세션 이름 로그인할 때 만들어질 세션 이름이랑 맞출 것
-			customer.setCus_id(uid);		
-			CustomerDBBean manager = CustomerDBBean.getInstance();
-			int re = manager.updateCustomer(customer);	
-			 
-			if(re == 1){
+		String uid = (String) session.getAttribute("id"); 
+		String cus_nickname = request.getParameter("cus_nickname");
+		customer.setCus_id(uid);		
+		CustomerDBBean manager = CustomerDBBean.getInstance();
+		int re = manager.updateCustomer(customer);	
+		 
+		if(re == 1){
 	%>
 			<script type="text/javascript">
 				alert("입력하신대로 회원 정보가 수정되었습니다.");

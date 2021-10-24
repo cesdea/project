@@ -10,6 +10,10 @@ public class CustomerBean {
 	private Timestamp cus_registration_date;
 	private int cus_num;
 	
+	private String man_id;
+	private String man_pwd;
+	private String man_name;
+	
 	public String getCus_id() {
 		return cus_id;
 	}
@@ -47,4 +51,22 @@ public class CustomerBean {
 		this.cus_num = cus_num;
 	}
 	
+	public String getMan_id() {
+		return man_id;
+	}
+	public void setMan_id(String man_id) {
+		this.man_id = man_id;
+	}
+	public String getMan_pwd() {
+		return man_pwd;
+	}
+	public void setMan_pwd(String man_pwd) {
+		this.man_pwd = man_pwd;
+	}
+	public String getMan_name() {
+		return man_name;
+	}
+	public void setMan_name(String man_name) {
+		this.man_name = man_name;
+	}	
 }
