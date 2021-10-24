@@ -1,3 +1,5 @@
+<%@page import="portfolio.customer.CustomerBean"%>
+<%@page import="portfolio.customer.CustomerDBBean"%>
 <%@page import="myUtil.HanConv"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -9,6 +11,9 @@
 <%
 	String id = (String)session.getAttribute("id");
 	String name = (String)session.getAttribute("nickname");		
+	
+	CustomerDBBean db = CustomerDBBean.getInstance();
+	CustomerBean customer = db.getCustomer(id);
 %>    
 <!DOCTYPE html>
 <html>
@@ -28,8 +33,14 @@
 				<td>
 					<input type="submit" value="로그아웃">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="button" value="회원정보 조회" onclick="javascript:window.location='CustomerInfo.jsp'">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<%
+						if(customer != null){
+					%>
+						<input type="button" value="회원정보 조회" onclick="javascript:window.location='CustomerInfo.jsp'">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;					
+					<%
+						}
+					%>
 					<input type="button" value="고객센터" onclick="javascript:window.location='ServiceList.jsp'">
 				</td>
 			</tr>
