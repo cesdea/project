@@ -26,7 +26,7 @@ public class ServiceAnswerDBBean {
 	}
 	
 	/*특정 글번호의 고객센터 답변 글 불러오기*/
-	public ServiceAnswerBean getServiceAnswer(int s_a_ref) {
+	public ServiceAnswerBean getServiceAnswer(int s_a_id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -35,9 +35,9 @@ public class ServiceAnswerDBBean {
 		
 		try {
 			conn = getConnection();
-			sql = "SELECT * FROM service_answer WHERE s_a_ref = ?";
+			sql = "SELECT * FROM service_answer WHERE s_a_id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, s_a_ref);
+			pstmt.setInt(1, s_a_id);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
@@ -71,7 +71,7 @@ public class ServiceAnswerDBBean {
 		try {
 			conn = getConnection();
 			
-			String sql="select * from service_answer order by s_a_ref asc";
+			String sql="select * from service_answer order by s_a_id asc";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
@@ -113,7 +113,7 @@ public class ServiceAnswerDBBean {
 		try {
 			conn = getConnection();
 			
-			String sql = "select max(s_a_id) from service_answer";
+			String sql = "select max(s_a_ref) from service_answer";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
@@ -123,8 +123,8 @@ public class ServiceAnswerDBBean {
 			
 			String sql2 = "INSERT INTO service_answer VALUES (?,?,?,?)";
 			pstmt2 = conn.prepareStatement(sql2);
-			pstmt2.setInt(1, number);
-			pstmt2.setInt(2, serviceAnswer.getS_a_ref());
+			pstmt2.setInt(1, serviceAnswer.getS_a_id());
+			pstmt2.setInt(2, number);
 			pstmt2.setString(3, HanConv.toKor(serviceAnswer.getS_a_name()));
 			pstmt2.setString(4, HanConv.toKor(serviceAnswer.getS_a_content()));
 			pstmt2.executeUpdate();
@@ -155,11 +155,11 @@ public class ServiceAnswerDBBean {
 		
 		try {
 			conn = getConnection();
-			sql="update service_answer set s_a_name=?, s_a_content=? where s_a_ref=?";
+			sql="update service_answer set s_a_name=?, s_a_content=? where s_a_id=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, HanConv.toKor(service_answer.getS_a_name()));
 			pstmt.setString(2, HanConv.toKor(service_answer.getS_a_content()));
-			pstmt.setInt(3, service_answer.getS_a_ref());
+			pstmt.setInt(3, service_answer.getS_a_id());
 			pstmt.executeUpdate();
 			re=1;
 			
@@ -179,12 +179,13 @@ public class ServiceAnswerDBBean {
 	}
 	
 	/*고객센터 답변 글 삭제*/
-	public int deleteServiceAnswer(int s_a_ref, String man_pwd) {
+	public int deleteServiceAnswer(int s_a_id, String man_pwd) {
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		PreparedStatement pstmt2=null;
 		PreparedStatement pstmt3=null;
 		ResultSet rs=null;
+		ResultSet rs2=null;
 		String sql="";
 		int re=-1;
 		
@@ -196,11 +197,24 @@ public class ServiceAnswerDBBean {
 			rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
-					sql="delete Service_answer where s_a_ref=?";
+					sql="delete Service_answer where s_a_id=?";
 					pstmt2 = conn.prepareStatement(sql);
-					pstmt2.setInt(1, s_a_ref);
+					pstmt2.setInt(1, s_a_id);
 					pstmt2.executeUpdate();
 					re=1;
+			}else {
+				sql="select cus_pwd from customer where cus_pwd=?";
+				pstmt3 = conn.prepareStatement(sql);
+				pstmt3.setString(1, man_pwd);
+				rs2 = pstmt3.executeQuery();
+				
+				if (rs2.next()) {
+						sql="delete Service_answer where s_a_id=?";
+						pstmt2 = conn.prepareStatement(sql);
+						pstmt2.setInt(1, s_a_id);
+						pstmt2.executeUpdate();
+						re=1;
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

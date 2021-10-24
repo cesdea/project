@@ -71,7 +71,7 @@ public class CustomerDBBean {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		
-		String sql = "SELECT man_pwd FROM manager where man_id =?";
+		String sql = "SELECT MAN_PWD FROM manager where MAN_ID =?";
 		int re=-1;
 		
 		try {

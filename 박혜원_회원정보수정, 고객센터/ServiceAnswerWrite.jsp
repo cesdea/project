@@ -16,7 +16,7 @@
 	String s_a_name="", s_a_content="";
 	
 	
-	s_a_ref = Integer.parseInt(request.getParameter("s_id"));
+	s_a_id = Integer.parseInt(request.getParameter("s_id"));
 	s_a_name = name;
 	
 %>

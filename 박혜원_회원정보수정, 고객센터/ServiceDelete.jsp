@@ -8,6 +8,7 @@
 </head>
 <body>
 	<%
+		String id = (String)session.getAttribute("id");
 		String pageNum = request.getParameter("pageNum");
 		int s_id = Integer.parseInt(request.getParameter("s_id"));
 	%>

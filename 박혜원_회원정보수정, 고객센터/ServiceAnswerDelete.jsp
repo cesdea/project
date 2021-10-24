@@ -11,10 +11,10 @@
 <body>
 	<%
 		String pageNum = request.getParameter("pageNum");
-		int s_a_ref = Integer.parseInt(request.getParameter("s_a_ref")); 
+		int s_a_id = Integer.parseInt(request.getParameter("s_id")); 
 	%>
 	<h2>암호를 입력하세요.</h2>
-	<form method="post" action="ServiceAnswerDeleteOk.jsp?pageNum=<%= pageNum %>&s_a_ref=<%= s_a_ref %>">
+	<form method="post" action="ServiceAnswerDeleteOk.jsp?pageNum=<%= pageNum %>&s_a_id=<%= s_a_id %>">
 		<table>
 			<tr>
 				<td>암 호</td>

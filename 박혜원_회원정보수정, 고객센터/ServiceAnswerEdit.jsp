@@ -14,14 +14,14 @@
 
 	String pageNum = request.getParameter("pageNum");
 	String name = (String)session.getAttribute("nickname");
-	int s_a_ref = Integer.parseInt(request.getParameter("s_a_ref"));
+	int s_a_id = Integer.parseInt(request.getParameter("s_id"));
 	
-	int s_a_id=0;
+	int s_a_ref=0;
 	String s_a_name="", s_a_content="";
 	
 	ServiceAnswerDBBean db = ServiceAnswerDBBean.getInstance();
-	ServiceAnswerBean service_answer = db.getServiceAnswer(s_a_ref);
-	s_a_id = service_answer.getS_a_id();
+	ServiceAnswerBean service_answer = db.getServiceAnswer(s_a_id);
+	s_a_ref = service_answer.getS_a_ref();
 	s_a_name = name;
 	s_a_content = service_answer.getS_a_content();
 	

@@ -13,7 +13,7 @@
 		ServiceAnswerDBBean a_db = ServiceAnswerDBBean.getInstance();
 		ServiceAnswerBean ServiceAnswer = new ServiceAnswerBean();
 		int re = 0;
-		if(request.getParameter("s_a_ref") != null){
+		if(request.getParameter("s_a_id") != null){
 			ServiceAnswer.setS_a_id(Integer.parseInt(request.getParameter("s_a_id")));
 			ServiceAnswer.setS_a_ref(Integer.parseInt(request.getParameter("s_a_ref")));
 			ServiceAnswer.setS_a_content(request.getParameter("s_a_content"));

@@ -10,11 +10,11 @@
 <body>
 	<%
 		String pageNum = request.getParameter("pageNum");
-		int s_a_ref = Integer.parseInt(request.getParameter("s_a_ref")); 
+		int s_a_id = Integer.parseInt(request.getParameter("s_a_id")); 
 		String man_pwd = request.getParameter("man_pwd");
 		
 		ServiceAnswerDBBean db = ServiceAnswerDBBean.getInstance();
-		int re = db.deleteServiceAnswer(s_a_ref, man_pwd);
+		int re = db.deleteServiceAnswer(s_a_id, man_pwd);
 		
 		if(re == 1){
 			response.sendRedirect("ServiceList.jsp?pageNum="+pageNum);

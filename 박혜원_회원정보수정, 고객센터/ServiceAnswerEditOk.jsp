@@ -14,7 +14,7 @@
 		ServiceAnswerDBBean db = ServiceAnswerDBBean.getInstance();
 		
 		ServiceAnswerBean service_answer = new ServiceAnswerBean();
-		service_answer.setS_a_ref(Integer.parseInt(request.getParameter("s_a_ref")));
+		service_answer.setS_a_id(Integer.parseInt(request.getParameter("s_a_id")));
 		service_answer.setS_a_name(request.getParameter("s_a_name"));
 		service_answer.setS_a_content(request.getParameter("s_a_content"));
 		int re = db.editServiceAnswer(service_answer);

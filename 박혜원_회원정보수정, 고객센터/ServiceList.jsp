@@ -16,7 +16,6 @@
 		int s_id=0;
 		String s_name, s_content;
 		String id = (String)session.getAttribute("id");
-		//String name = (String)session.getAttribute("nickname");
 		
 		String pageNum = request.getParameter("pageNum");
 
@@ -29,7 +28,8 @@
 		int countNum = db.countService();//고객센터 전체 글 개수
 		ArrayList<ServiceBean> serviceList = db.listService(pageNum);//고객센터 글 목록
 		
-		String man_id = db.manidCheck();//관리자 id 확인
+		String man_id = db.manidCheck(id);//관리자 id 확인
+		
 	%>
 	<%
 		int s_a_id=0, s_a_ref=0;
@@ -40,7 +40,10 @@
 		<h2>고 객 센 터</h2>
 		<table width="1000" border="1" cellspacing="0" >
 			<tr height="25">
-				<td width="40" colspan="4">전체 <%= countNum %>건</td>
+				<td width="40" colspan="3">전체 <%= countNum %>건</td>
+				<td width="40">
+					<a href="main.jsp">메인메뉴</a>
+				</td>
 			</tr>
 			<%
 				for(int i=0; i<serviceList.size(); i++){
@@ -48,6 +51,8 @@
 					s_id = service.getS_id();
 					s_name = service.getS_name();
 					s_content = service.getS_content();
+					
+					String cus_id = db.cusidCheck(s_name);//사용자 id 확인
 					
 			%>
 					<tr height="25" bgcolor="#f7f7f7" 
@@ -62,17 +67,23 @@
 						<td align="center" width="50">
 							<%= s_name %>
 						</td>
-			<%
-						if(db.manidCheck().equals(id)){
-			%>
 							<td width="180">
+			<%
+						if(db.manidCheck(id).equals(id)){
+			%>
 								<input type="button" value="답변" onclick="location.href='ServiceAnswerWrite.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
 								<input type="button" value="수정" onclick="location.href='ServiceEdit.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
 								<input type="button" value="삭제" onclick="location.href='ServiceDelete.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
-							</td>
 			<%
 						}
+						if(id.equals(cus_id)){
 			%>
+								<input type="button" value="수정" onclick="location.href='ServiceEdit.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
+								<input type="button" value="삭제" onclick="location.href='ServiceDelete.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
+			<%
+						}
+			%>					
+							</td>
 					</tr>
 			<%
 						for(int j=0; j<serviceAnswerList.size(); j++){
@@ -82,7 +93,7 @@
 							s_a_name = serviceAnswer.getS_a_name();
 							s_a_content = serviceAnswer.getS_a_content();
 							
-							if(s_id == s_a_ref){
+							if(s_id == s_a_id){
 			%>
 								<tr height="25" >
 									<td align="center" width="600" colspan="2">
@@ -92,11 +103,11 @@
 										<%= s_a_name %>
 									</td>
 			<%
-								if(db.manidCheck().equals(id)){
+								if(db.manidCheck(id).equals(id)){
 			%>
 									<td>
-										<input type="button" value="수정" onclick="location.href='ServiceAnswerEdit.jsp?pageNum=<%= pageNum %>&s_a_ref=<%= s_id %>'">
-										<input type="button" value="삭제" onclick="location.href='ServiceAnswerDelete.jsp?pageNum=<%= pageNum %>&s_a_ref=<%= s_id %>'">
+										<input type="button" value="수정" onclick="location.href='ServiceAnswerEdit.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
+										<input type="button" value="삭제" onclick="location.href='ServiceAnswerDelete.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
 									</td>
 			<%
 								}
@@ -107,16 +118,12 @@
 						}
 					}
 			
-				if(db.manidCheck().equals(id)){
 			%>
 					<tr>
 						<td align="right" colspan="4">
 							<a href="ServiceWrite.jsp?pageNum=<%= pageNum %>">글 쓰 기</a>
 						</td>
 					</tr>
-			<%
-				}
-			%>
 		</table>
 		<%= ServiceBean.pageNumer(5) %>
 </body>
