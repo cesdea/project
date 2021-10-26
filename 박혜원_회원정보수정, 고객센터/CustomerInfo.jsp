@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="portfolio.customer.CustomerBean"%>
 <%@page import="portfolio.customer.CustomerDBBean"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -14,6 +15,8 @@
 		CustomerDBBean db = CustomerDBBean.getInstance();
 		/*세션의 아이디와 일치하는 고객 정보를 가져옴*/
 		CustomerBean customer = db.getCustomer(id);
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	%>
 	<table>
 		<form name="reg_frm" method="post" action="CustomerInfoCheck.jsp">
@@ -33,6 +36,10 @@
 			<tr height="40">
 				<td width="120" align="center">이메일</td>
 				<td><%= customer.getCus_email()%></td>
+			</tr>
+			<tr height="40">
+				<td width="120" align="center">가입일</td>
+				<td><%= sdf.format(customer.getCus_registration_date()) %></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">

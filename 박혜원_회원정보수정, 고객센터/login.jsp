@@ -10,7 +10,7 @@
 	<table border="1" align="center">
 		<form method="post" action="loginOk.jsp">
 			<tr>
-				<td align="center">사용자 ID</td>
+				<td align="center">아이디</td>
 				<td><input type="text" name="cus_id"></td>
 			</tr>
 			<tr>

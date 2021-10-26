@@ -9,11 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>암호를 입력하세요.</h2>
+	<h2>비밀번호를 입력하세요.</h2>
 	<form method="post" action="CustomerInfoCheckOk.jsp">
 		<table>
 			<tr>
-				<td>암 호</td>
+				<td>비밀번호</td>
 				<td>
 					<input type="password" name="cus_pwd">
 				</td>

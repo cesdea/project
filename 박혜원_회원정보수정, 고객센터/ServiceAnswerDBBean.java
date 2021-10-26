@@ -179,49 +179,25 @@ public class ServiceAnswerDBBean {
 	}
 	
 	/*고객센터 답변 글 삭제*/
-	public int deleteServiceAnswer(int s_a_id, String man_pwd) {
+	public int deleteServiceAnswer(int s_a_id) {
 		Connection conn=null;
 		PreparedStatement pstmt=null;
-		PreparedStatement pstmt2=null;
-		PreparedStatement pstmt3=null;
-		ResultSet rs=null;
-		ResultSet rs2=null;
 		String sql="";
 		int re=-1;
 		
 		try {
 			conn = getConnection();
-			sql="select man_pwd from manager where man_pwd=?";
+						
+			sql="delete Service_answer where s_a_id=?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, man_pwd);
-			rs = pstmt.executeQuery();
-			
-			if (rs.next()) {
-					sql="delete Service_answer where s_a_id=?";
-					pstmt2 = conn.prepareStatement(sql);
-					pstmt2.setInt(1, s_a_id);
-					pstmt2.executeUpdate();
-					re=1;
-			}else {
-				sql="select cus_pwd from customer where cus_pwd=?";
-				pstmt3 = conn.prepareStatement(sql);
-				pstmt3.setString(1, man_pwd);
-				rs2 = pstmt3.executeQuery();
+			pstmt.setInt(1, s_a_id);
+			pstmt.executeUpdate();
+			re=1;
 				
-				if (rs2.next()) {
-						sql="delete Service_answer where s_a_id=?";
-						pstmt2 = conn.prepareStatement(sql);
-						pstmt2.setInt(1, s_a_id);
-						pstmt2.executeUpdate();
-						re=1;
-				}
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			try {
-				if(rs != null) rs.close();
-				if(pstmt2 != null) pstmt2.close();
 				if(pstmt != null) pstmt.close();
 				if(conn != null) conn.close();
 			} catch (Exception e2) {

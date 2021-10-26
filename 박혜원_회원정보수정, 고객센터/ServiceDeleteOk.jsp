@@ -14,7 +14,7 @@
 		String man_pwd = request.getParameter("man_pwd");
 		
 		ServiceDBBean db = ServiceDBBean.getInstance();
-		int re = db.deleteService(s_id, man_pwd);
+		int re = db.deleteService(s_id);
 		
 		if(re == 1){
 			response.sendRedirect("ServiceList.jsp?pageNum="+pageNum);

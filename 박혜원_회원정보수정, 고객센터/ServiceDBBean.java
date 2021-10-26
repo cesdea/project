@@ -309,65 +309,32 @@ public class ServiceDBBean {
 	}
 
 	/*고객센터 글 삭제*/
-	public int deleteService(int s_id, String man_pwd) {
+	public int deleteService(int s_id) {
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		PreparedStatement pstmt2=null;
-		PreparedStatement pstmt3=null;
-		PreparedStatement pstmt4=null;
-		PreparedStatement pstmt5=null;
-		PreparedStatement pstmt6=null;
-		ResultSet rs=null;
-		ResultSet rs2=null;
 		String sql="";
 		int re=-1;
 		
 		try {
 			conn = getConnection();
-			sql="select man_pwd from manager where man_pwd=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, man_pwd);
-			rs = pstmt.executeQuery();
 			
-			if (rs.next()) {
-					sql="delete service where s_id=?";
-					pstmt2 = conn.prepareStatement(sql);
-					pstmt2.setInt(1, s_id);
-					pstmt2.executeUpdate();
+			sql="delete service_answer where s_a_id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, s_id);
+			pstmt.executeUpdate();
+			
+			sql="delete service where s_id=?";
+			pstmt2 = conn.prepareStatement(sql);
+			pstmt2.setInt(1, s_id);
+			pstmt2.executeUpdate();
 
-					sql="delete service_answer where s_a_id=?";
-					pstmt3 = conn.prepareStatement(sql);
-					pstmt3.setInt(1, s_id);
-					pstmt3.executeUpdate();
-					re=1;
-			}else {
-				sql="select cus_pwd from customer where cus_pwd=?";
-				pstmt4 = conn.prepareStatement(sql);
-				pstmt4.setString(1, man_pwd);
-				rs2 = pstmt4.executeQuery();
+			re=1;
 				
-				if (rs2.next()) {
-						sql="delete service where s_id=?";
-						pstmt5 = conn.prepareStatement(sql);
-						pstmt5.setInt(1, s_id);
-						pstmt5.executeUpdate();
-						
-						sql="delete service_answer where s_a_id=?";
-						pstmt6 = conn.prepareStatement(sql);
-						pstmt6.setInt(1, s_id);
-						pstmt6.executeUpdate();
-						re=1;
-				}
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			try {
-				if(rs != null) rs.close();
-				if(pstmt6 != null) pstmt6.close();
-				if(pstmt5 != null) pstmt5.close();
-				if(pstmt4 != null) pstmt4.close();
-				if(pstmt3 != null) pstmt3.close();
 				if(pstmt2 != null) pstmt2.close();
 				if(pstmt != null) pstmt.close();
 				if(conn != null) conn.close();

@@ -51,13 +51,8 @@ ServiceAnswerEdit.jsp : 고객센터 답변 수정 폼
 
 ServiceAnswerEditOk.jsp : 고객센터 답변 수정 처리
 
-ServiceAnswerDelete.jsp : 고객센터 답변 삭제 폼
-
 ServiceAnswerDeleteOk.jsp : 고객센터 답변 삭제 처리
 
 service.js : 고객센터 글, 답변 유효성 검사
 
-*********************************************************************
 
-※ 수정이 필요한 부분
-1. 회원정보 변경 후 이동한 메인화면에서 예전 닉네임이 나오고 다시 로그인 해야 변경된 닉네임으로 나오는 것

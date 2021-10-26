@@ -73,13 +73,13 @@
 			%>
 								<input type="button" value="답변" onclick="location.href='ServiceAnswerWrite.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
 								<input type="button" value="수정" onclick="location.href='ServiceEdit.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
-								<input type="button" value="삭제" onclick="location.href='ServiceDelete.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
+								<input type="button" value="삭제" onclick="location.href='ServiceDeleteOk.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
 			<%
 						}
 						if(id.equals(cus_id)){
 			%>
 								<input type="button" value="수정" onclick="location.href='ServiceEdit.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
-								<input type="button" value="삭제" onclick="location.href='ServiceDelete.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
+								<input type="button" value="삭제" onclick="location.href='ServiceDeleteOk.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
 			<%
 						}
 			%>					
@@ -106,8 +106,8 @@
 								if(db.manidCheck(id).equals(id)){
 			%>
 									<td>
-										<input type="button" value="수정" onclick="location.href='ServiceAnswerEdit.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
-										<input type="button" value="삭제" onclick="location.href='ServiceAnswerDelete.jsp?pageNum=<%= pageNum %>&s_id=<%= s_id %>'">
+										<input type="button" value="수정" onclick="location.href='ServiceAnswerEdit.jsp?pageNum=<%= pageNum %>&s_a_id=<%= s_a_id %>'">
+										<input type="button" value="삭제" onclick="location.href='ServiceAnswerDeleteOk.jsp?pageNum=<%= pageNum %>&s_a_id=<%= s_a_id %>'">
 									</td>
 			<%
 								}
