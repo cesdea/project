@@ -1,0 +1,145 @@
+header{
+	align-content: center;
+	display: inline-block;
+	width: 1000px;
+	margin: 0 auto;
+	height: 40px;
+	padding: 80px;
+}
+/* 메뉴 마우스로 나오기 */
+.memu{
+	border-radius: 15px;
+	border: 1px solid black;
+	display: inline-block;
+	margin: 0;
+	padding: 5px 1px;
+	width: 550px;
+	height: 40px;
+	list-style: none;
+}
+.memu li {
+	float: left;
+	position: relative;
+	margin: 5px 30px;
+	padding: 0;
+}
+.memu li a{
+	display: block;
+	margin: 0;
+	padding: 7px 8px;
+	text-decoration: none;
+	color: black;
+}
+.memu li :hover{
+	font: bolder;
+	color: black;
+	margin: 0;
+	padding: 5px;
+}
+.memu ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 40px;
+	width: 105px;
+	background: lemonchiffon;
+	text-align: center;
+	opacity: 0;
+	z-index: 1;
+}
+.memu ul li{
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+.memu ul a{
+	font-weight: normal;
+	color: black;
+}
+.memu ul li:hover a{
+	transform: scale(1.1,1.1);
+	background: sandybrown;
+}
+.memu li:hover ul{
+	opacity: 1;
+}
+.memu li:hover ul{
+	overflow: visible;
+	padding: 0;
+}
+
+
+/* 왼쪽 메인버튼 */
+.left{
+	border-radius: 15px;
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	margin: 0;
+	padding: 5px 1px;
+	border: black 1px solid;
+	margin-right: 100px;
+}
+.left a{
+	position: absolute;
+	left: 0;
+	top: 15px;
+	width: 100px;
+
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+.left:hover {
+	transform: scale(1.1,1.1);
+}
+
+/* 오른쪽 채팅창버튼 */
+.right{
+	border-radius: 15px;
+	border:1px solid black;
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	margin: 0;
+	padding: 5px 1px;
+	margin-left: 100px;
+}
+.right a{
+	position: absolute;
+	left: 0;
+	top: 15px;
+	width: 100px;
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+.right:hover{
+	transform: scale(1.1,1.1);
+}
+
+/* 중앙 내용 */
+section{
+	border:1px solid black;
+	width: 1000px;
+	height: 600px;
+	padding: 10px;
+}
+section iframe{
+	width: 100%;
+	height: 100%;
+	
+	border:1px solid black;
+}
+
+
+
+footer{
+	float:none;
+	width: 1000px;
+	text-align: left;
+}

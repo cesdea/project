@@ -1,0 +1,201 @@
+header{
+	align-content: center;
+	display: inline-block;
+	width: 1000px;
+	margin: 0 auto;
+	height: 40px;
+	padding: 80px;
+}
+
+/* 메뉴 마우스로 나오기 */
+.memu{
+	border-radius: 15px;
+	border: 1px solid black;
+	display: inline-block;
+	margin: 0;
+	padding: 5px 1px;
+	width: 550px;
+	height: 40px;
+	list-style: none;
+}
+.memu li {
+	float: left;
+	position: relative;
+	margin: 5px 30px;
+	padding: 0;
+}
+.memu li a{
+	display: block;
+	margin: 0;
+	padding: 7px 8px;
+	text-decoration: none;
+	color: black;
+}
+.memu li :hover{
+	font: bolder;
+	color: black;
+	margin: 0;
+	padding: 5px;
+}
+.memu ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 40px;
+	width: 105px;
+	background: lemonchiffon;
+	text-align: center;
+	opacity: 0;
+	z-index: 1;
+}
+.memu ul li{
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+.memu ul a{
+	font-weight: normal;
+	color: black;
+}
+.memu ul li:hover a{
+	transform: scale(1.1,1.1);
+	background: sandybrown;
+}
+.memu li:hover ul{
+	opacity: 1;
+}
+.memu li:hover ul{
+	overflow: visible;
+	padding: 0;
+}
+
+/* 왼쪽 메인버튼 */
+.left{
+	border-radius: 15px;
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	margin: 0;
+	padding: 5px 10px;
+	border: black 1px solid;
+	margin-right: 100px;
+}
+.left a{
+	position: absolute;
+	left: 0;
+	top: 15px;
+	width: 100px;
+
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+.left:hover {
+	transform: scale(1.1,1.1);
+}
+
+/* 오른쪽 채팅창버튼 */
+.right{
+	border-radius: 15px;
+	border:1px solid black;
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	margin: 0;
+	padding: 5px 1px;
+	margin-left: 100px;
+}
+.right a{
+	position: absolute;
+	left: 0;
+	top: 15px;
+	width: 100px;
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+.right:hover{
+	transform: scale(1.1,1.1);
+}
+
+content table{
+	width:  1000px;
+	height: 400px;
+}
+
+/* 중앙 내용 */
+content table td{
+	text-align: center;
+	width: 200px;
+	height: 100px;
+	border: 1px solid black;		
+}
+
+/* 로그인 버튼 */
+#login{
+	padding-left:20px;
+	text-align: center;
+	display: table;
+	width: 200px;
+	height: 100px;
+}
+
+#login div{
+	border-radius: 15px;
+	display: table-cell;
+    vertical-align: middle;
+	text-decoration: none;
+	color: black;
+	background-color: beige;
+}
+#login div #logout{
+	border: 1px solid gray;
+}
+#login div a{
+	display:block;
+	margin:5px;
+	text-decoration: none;
+	color: black;
+}
+
+/* 뉴스 창만들기 */
+.news{
+	z-index: 2;
+	position: relative;
+	padding: 0;
+	width: 720px;
+	height: 780px;
+}
+.news iframe{
+	z-index: 2;
+	position: absolute;
+	top: 30px;
+	left: 45px;
+}
+.empty{
+	empty-cells: hide;
+}
+.exchage{
+	height: 200px;
+	position: relative;
+}
+.exchage iframe{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+/* 메뉴창 */
+.main_memu table{
+	height: 500px;
+}	
+
+footer{
+	float:none;
+	width: 1000px;
+	text-align: left;
+}
