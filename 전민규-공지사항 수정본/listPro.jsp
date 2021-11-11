@@ -12,7 +12,7 @@
 </head>
 <body>
 <%
-Class.forName("com.mysql.jdbc.Driver");
+Class.forName("oracle.jdbc.driver.OracleDriver");
 String url ="jdbc:oracle:thin:@localhost:1521:xe";
 String userid ="C##stock";
 String password="1234";
