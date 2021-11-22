@@ -1,0 +1,8 @@
+create table notice(
+n_id NUMBER(10)
+,n_name VARCCHAR2(30)
+,n_title VARCCHAR2(30)
+,n_content VARCCHAR2(100)
+,n_regDt DATE DEFAULT sysdate
+,primary key(n_id)
+);

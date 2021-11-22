@@ -12,14 +12,14 @@
 </head>
 <body>
 <% 
-Class.forName("com.mysql.jdbc.Driver");
+Class.forName("oracle.jdbc.driver.OracleDriver");
 String url="jdbc:oracle:thin:@localhost:1521:xe";
 String userid="c##stock";
 String password="1234";
 
 Connection con=DriverManager.getConnection(url, userid, password);
 
-String sql="select * from board order by num desc" ;
+String sql="select * from notice order by num desc" ;
 
 PreparedStatement pstmt=con.prepareStatement(sql);
 
