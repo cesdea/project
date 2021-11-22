@@ -10,6 +10,8 @@
 </head>
 <body>
 	<%
+		
+	
 		noticeDAO ndao = new noticeDAO();
 		noticeBean Nb = new noticeBean();
 		if(request.getParameter("n_title") != null){
@@ -22,7 +24,7 @@
 	%>
 			<script type="text/javascript">
 				alert("공지사항에 새 글이 등록되었습니다.");
-				document.location.href="noticeList.jsp";
+				document.location.href="Notice_List.jsp";
 			</script>
 	<%
 		}else{
