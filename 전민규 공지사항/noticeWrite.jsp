@@ -14,7 +14,7 @@
 	<%
 		// 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
 		String userID = null;
-		if(session.getAttribute("cus_ID") != null){
+		if(session.getAttribute("cus_ID") == null){
 			userID = (String)session.getAttribute("cus_ID");
 		}
 	%>

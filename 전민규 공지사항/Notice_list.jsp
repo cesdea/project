@@ -5,49 +5,49 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"   pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <body>
    <%
-      // noticeDAO ndao °´Ã¼»ý¼º    
+      // noticeDAO ndao ê°ì²´ìƒì„±    
       noticeDAO ndao = new noticeDAO();
-      // °Ô½ÃÆÇ ±Û°³¼ö¸¦ ´ã°í ÀÖ´Â ¸Þ¼Òµå   getNoticeCount() È£Ãâ
+      // ê²Œì‹œíŒ ê¸€ê°œìˆ˜ë¥¼ ë‹´ê³  ìžˆëŠ” ë©”ì†Œë“œ   getNoticeCount() í˜¸ì¶œ
       int count = ndao.getNoticeCount();
-      // ÇÑÈ­¸é¿¡ º¸¿©ÁÙ °¡Á®¿Ã ±Û °³¼ö ¼³Á¤ 
+      // í•œí™”ë©´ì— ë³´ì—¬ì¤„ ê°€ì ¸ì˜¬ ê¸€ ê°œìˆ˜ ì„¤ì • 
       int pageSize = 10;
-      // ÇöÆäÀÌÁö ¹øÈ£ °¡Á®¿À±â  pageNum ÆÄ¶ó¹ÌÅÍ °¡Á®¿À±â
+      // í˜„íŽ˜ì´ì§€ ë²ˆí˜¸ ê°€ì ¸ì˜¤ê¸°  pageNum íŒŒë¼ë¯¸í„° ê°€ì ¸ì˜¤ê¸°
       String pageNum = request.getParameter("pageNum");
-      // ÇöÆäÀÌÁö ¹øÈ£°¡ ¾øÀ¸¸é "1"ÆäÀÌÁö·Î ¼³Á¤
+      // í˜„íŽ˜ì´ì§€ ë²ˆí˜¸ê°€ ì—†ìœ¼ë©´ "1"íŽ˜ì´ì§€ë¡œ ì„¤ì •
       if (pageNum == null) {
          pageNum = "1";
       }
-      // pageNum => Á¤¼öÇüÀ¸·Î º¯°æ
+      // pageNum => ì •ìˆ˜í˜•ìœ¼ë¡œ ë³€ê²½
       int currentPage = Integer.parseInt(pageNum);
-      // 10°³¾¿ Àß¶ó¼­ 1ÆäÀÌÁö ½ÃÀÛÇÏ´Â Çà¹øÈ£ ±¸ÇÏ±â
-      //  pageNum(currentPage)    pageSize       =>   startRow½ÃÀÛÇà¹øÈ£  
+      // 10ê°œì”© ìž˜ë¼ì„œ 1íŽ˜ì´ì§€ ì‹œìž‘í•˜ëŠ” í–‰ë²ˆí˜¸ êµ¬í•˜ê¸°
+      //  pageNum(currentPage)    pageSize       =>   startRowì‹œìž‘í–‰ë²ˆí˜¸  
       //        1                    10          =>   (1-1)*10+1 => 0*10+1 => 0+1  => 1 
       //        2                    10          =>   (2-1)*10+1 => 1*10+1 => 10+1 => 11 
       //        3                    10          =>   (3-1)*10+1 => 2*10+1 => 20+1 => 21
       int startRow = (currentPage - 1) * pageSize + 1;
       // endRow
-      //  pageNum(currentPage)    pageSize       =>   endRow½ÃÀÛÇà¹øÈ£  
+      //  pageNum(currentPage)    pageSize       =>   endRowì‹œìž‘í–‰ë²ˆí˜¸  
       //        1                    10          =>   10 
       //        2                    10          =>   20
       //        3                    10          =>   30
       int endRow = currentPage * pageSize;
-      //¸®ÅÏÇÒÇü List  getBoardList(½ÃÀÛÇÏ´ÂÇà¹øÈ£,±Û°³¼ö) ¸¸µé±â
-      // select * from board order by num desc limit ½ÃÀÛÇÏ´ÂÇà¹øÈ£-1,±Û°³¼ö
-      // List boardList= getBoardList(startRow,pageSize) È£Ãâ
+      //ë¦¬í„´í• í˜• List  getBoardList(ì‹œìž‘í•˜ëŠ”í–‰ë²ˆí˜¸,ê¸€ê°œìˆ˜) ë§Œë“¤ê¸°
+      // select * from board order by num desc limit ì‹œìž‘í•˜ëŠ”í–‰ë²ˆí˜¸-1,ê¸€ê°œìˆ˜
+      // List boardList= getBoardList(startRow,pageSize) í˜¸ì¶œ
       List noticeList = ndao.getNoticeList(startRow, pageSize);
    %>
-   <h1>°øÁö»çÇ×</h1> <span style="color:red">[ <%=count%> °³ÀÇ °øÁö°¡ ÀÖ½À´Ï´Ù.]</span>
+   <h1>ê³µì§€ì‚¬í•­</h1> <span style="color:red">[ <%=count%> ê°œì˜ ê³µì§€ê°€ ìžˆìŠµë‹ˆë‹¤.]</span>
    <table border="1">
       <tr>
-         <td>¹øÈ£</td>
-         <td>±Û Á¦¸ñ</td>
-         <td>´ã´çÀÚ¸í</td>
-         <td>ÀÛ¼ºÀÏ</td>
+         <td>ë²ˆí˜¸</td>
+         <td>ê¸€ ì œëª©</td>
+         <td>ë‹´ë‹¹ìžëª…</td>
+         <td>ìž‘ì„±ì¼</td>
       </tr>
       <%
          for (int i = 0; i < noticeList.size(); i++) {
@@ -57,7 +57,7 @@
       <tr>
          <td><%=nb.getN_id()%></td>
          <td>
-            <a href="noticeView.jsp?num=<%=nb.getN_id()%>"><%=nb.getN_title()%></a>
+            <a href="noticeView.jsp?n_id=<%=nb.getN_id()%>"><%=nb.getN_title()%></a>
          </td>
          <td><%=nb.getN_name()%></td>
          <td><%=nb.getN_regDt()%></td>
@@ -67,46 +67,46 @@
          }
       %>
    </table>
-   <input type="button" value="°øÁöÀÛ¼º" class="btn" onclick="location.href='noticeWrite.jsp'">
+   <input type="button" value="ê³µì§€ìž‘ì„±" class="btn" onclick="location.href='noticeWrite.jsp'">
    <%
-      // ÀüÃ¼ ÆäÀÌÁö¼ö ±¸ÇÏ±â    
-      //          ÀüÃ¼ ±Û °³¼ö    50     ÇÑÈ­¸é¿¡ º¸¿©ÁÙ ±Û°³¼ö 10  => ÀüÃ¼ÆäÀÌÁö¼ö 5 + ³ª¸ÓÁö¾øÀ¸¸é 0 => 5
-      //                     59                      10  =>           5 +      ÀÖÀ¸¸é 1 => 6
+      // ì „ì²´ íŽ˜ì´ì§€ìˆ˜ êµ¬í•˜ê¸°    
+      //          ì „ì²´ ê¸€ ê°œìˆ˜    50     í•œí™”ë©´ì— ë³´ì—¬ì¤„ ê¸€ê°œìˆ˜ 10  => ì „ì²´íŽ˜ì´ì§€ìˆ˜ 5 + ë‚˜ë¨¸ì§€ì—†ìœ¼ë©´ 0 => 5
+      //                     59                      10  =>           5 +      ìžˆìœ¼ë©´ 1 => 6
       int pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
-      // ÇÑÈ­¸é¿¡ º¸¿©ÁÙ ÆäÀÌÁö °³¼ö
+      // í•œí™”ë©´ì— ë³´ì—¬ì¤„ íŽ˜ì´ì§€ ê°œìˆ˜
       int pageBlock = 3;
-      // ÇÑÈ­¸é¿¡ º¸¿©ÁÙ ½ÃÀÛÆäÀÌÁö ¹øÈ£ ±¸ÇÏ±â
-      // ÆäÀÌÁö ¹øÈ£currentPage      pageBlock    =>   ½ÃÀÛÆäÀÌÁö ¹øÈ£ startPage
+      // í•œí™”ë©´ì— ë³´ì—¬ì¤„ ì‹œìž‘íŽ˜ì´ì§€ ë²ˆí˜¸ êµ¬í•˜ê¸°
+      // íŽ˜ì´ì§€ ë²ˆí˜¸currentPage      pageBlock    =>   ì‹œìž‘íŽ˜ì´ì§€ ë²ˆí˜¸ startPage
       //      1~10                    10       =>    0~9/10*10+1=> 0*10+1=> 0+1  => 1
       //      11~20                   10       =>    10~19/10*10+1=> 1*10+1=> 10+1 => 11
       //      21~30                   10       =>    20~29/10*10+1=> 2*10+1=> 20+1 => 21
       int startPage = (currentPage - 1) / pageBlock * pageBlock + 1;
-      // ÇÑÈ­¸é¿¡ º¸¿©ÁÙ ³¡ÆäÀÌÁö ¹øÈ£ ±¸ÇÏ±â
+      // í•œí™”ë©´ì— ë³´ì—¬ì¤„ ëíŽ˜ì´ì§€ ë²ˆí˜¸ êµ¬í•˜ê¸°
       //   startPage      pageBlock =>  endPage
       //      1               10    =>   1+10-1  =>10 
       //      11              10    =>   11+10-1 =>20
       //      21              10    =>   21+10-1 =>30
       int endPage = startPage + pageBlock - 1;
-      //  endPage 10  <=  ÀüÃ¼ ÆäÀÌÁö¼ö 5ÆäÀÌÁö
+      //  endPage 10  <=  ì „ì²´ íŽ˜ì´ì§€ìˆ˜ 5íŽ˜ì´ì§€
       if (endPage > pageCount) {
          endPage = pageCount;
       }
-      // [ÀÌÀü]  10ÆäÀÌÁö ÀÌÀü
+      // [ì´ì „]  10íŽ˜ì´ì§€ ì´ì „
       if (startPage > pageBlock) {
    %>
-   <a href="noticeList.jsp?pageNum=<%=startPage - pageBlock%>">[ÀÌÀü]</a>
+   <a href="Notice_list.jsp?pageNum=<%=startPage - pageBlock%>">[ì´ì „]</a>
    <%
       }
       // 1~ 10  11~20   startPage  ~ endPage
       for (int i = startPage; i <= endPage; i++) {
    %>
-   <a href="noticeList.jsp?pageNum=<%=i%>"><%=i%></a>
+   <a href="Notice_list.jsp?pageNum=<%=i%>"><%=i%></a>
    <%
       }
-      //[´ÙÀ½] 10ÆäÀÌÁö ´ÙÀ½
+      //[ë‹¤ìŒ] 10íŽ˜ì´ì§€ ë‹¤ìŒ
       if (endPage < pageCount) {
    %>
-   <a href="noticeList.jsp?pageNum=<%=startPage + pageBlock%>">[´ÙÀ½]</a>
+   <a href="Notice_list.jsp?pageNum=<%=startPage + pageBlock%>">[ë‹¤ìŒ]</a>
    <%
       }
       
