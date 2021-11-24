@@ -1,0 +1,26 @@
+[main, main_memu , main_login]:
+ 로그인 했을 때만 마이페이지 보이도록 수정(main_login은 마이페이지 안 보이도록 수정)
+
+[CustomerLogin] :
+ Email을 ID로 수정, Remember me 체크박스 삭제
+
+[ServiceEdit, ServiceWrite]:
+ bootstrap 미적용된 것 및 오타 수정
+
+[CustomerDBBean.java ]:
+ getCustomer(), getMember() 메소드 중복이라 getMember() 메소드 삭제
+	+ getMember()메소드를 getCustomer()메소드로 수정 : CustomerLoginOk, noticUpdateOk
+
+ userCheck(), customerCheck() 메소드 중복이라 userCheck() 메소드 삭제
+	+ userCheck()메소드를 customerCheck()메소드로 수정 : noticUpdateOk
+
+ confirmID(), customerCheck() 메소드 유사하여 confirmID() 메소드 삭제
+	+ confirmID()메소드를 customerCheck()메소드로 수정 : CustomerRegisterOK
+ 
+ serchID(), serchPW() 메소드와 findId(), findPw() 메소드 중복이라 와 serchID(), serchPW() 메소드 삭제
+
+[bootstrap.css ]:
+ 반응형 웹이 자동으로 적용 되서 그부분만 주석 처리하여 화면을 줄여도 변하지 않도록 함(header, nav 부분만)
+
+
+
